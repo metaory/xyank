@@ -1,0 +1,35 @@
+
+function print_synopsis {
+  echo -e "\n\n\n${CX8} SYNOPSIS"
+  echo -e "${C5} [CMD... |] ${CX6}xyank ${CX4}X|Y ${C5}[STR...]\n\n"
+}
+
+function print_usage {
+  cat << EOM
+NAME
+	xyank - build, execute or pass standard input and arguments to clipboard
+
+SYNOPSIS
+
+	[CMD... |] xyank X|Y [STR...]
+
+# yank arguments to clipboard
+xyank Y date foo          # date foo
+
+# yank stdin to clipboard
+date | xyank y            # Sun Feb 25 00:00:00 AM +00 2024
+
+# yank stdin + arguments
+date | xyank Y foo bar    # Sun Feb 25 00:00:00 AM +00 2024 foo bar
+
+# execute argument * yank its stdout to clipboard
+xyank X date              # Sun Feb 25 00:00:00 AM +00 2024
+
+# execute stdin & yank its stdout to clipboard
+echo date | xyank X       # Sun Feb 25 00:00:00 AM +00 2024
+
+# execute stdin + arguments & yank its stdout to clipboard
+echo date | xyank X '+%s' # 1708796381
+EOM
+}
+# vim: ft=bash
