@@ -24,7 +24,7 @@ EXAMPLES
 	# yank stdin + arguments
 	date | xyank Y foo bar    # Sun Feb 25 00:00:00 AM +00 2024 foo bar
 
-	# execute argument * yank its stdout to clipboard
+	# execute argument & yank its stdout to clipboard
 	xyank X date              # Sun Feb 25 00:00:00 AM +00 2024
 
 	# execute stdin & yank its stdout to clipboard
@@ -45,7 +45,7 @@ AUTHOR
 Modes
 -----
 - `y|Y`: yank stdin, args to system clipboard
-- `x|X`: execute stdin, args and yank output to system clipboard
+- `x|X`: execute stdin, args & yank output to system clipboard
 
 Installation
 ------------
