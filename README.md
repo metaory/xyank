@@ -5,27 +5,37 @@ XYANK
 NAME
 	xyank - build, execute or pass standard input and arguments to clipboard
 
-SYNOPSIS
 
+SYNOPSIS
 	[CMD... |] xyank X|Y [STR...]
 
-# yank arguments to clipboard
-xyank Y date foo          # date foo
 
-# yank stdin to clipboard
-date | xyank y            # Sun Feb 25 00:00:00 AM +00 2024
+EXAMPLES
+	# yank arguments to clipboard
+	xyank Y date foo          # date foo
 
-# yank stdin + arguments
-date | xyank Y foo bar    # Sun Feb 25 00:00:00 AM +00 2024 foo bar
+	# yank stdin to clipboard
+	date | xyank y            # Sun Feb 25 00:00:00 AM +00 2024
 
-# execute argument * yank its stdout to clipboard
-xyank X date              # Sun Feb 25 00:00:00 AM +00 2024
+	# yank stdin + arguments
+	date | xyank Y foo bar    # Sun Feb 25 00:00:00 AM +00 2024 foo bar
 
-# execute stdin & yank its stdout to clipboard
-echo date | xyank X       # Sun Feb 25 00:00:00 AM +00 2024
+	# execute argument * yank its stdout to clipboard
+	xyank X date              # Sun Feb 25 00:00:00 AM +00 2024
 
-# execute stdin + arguments & yank its stdout to clipboard
-echo date | xyank X '+%s' # 1708796381
+	# execute stdin & yank its stdout to clipboard
+	echo date | xyank X       # Sun Feb 25 00:00:00 AM +00 2024
+
+	# execute stdin + arguments & yank its stdout to clipboard
+	echo date | xyank X '+%s' # 1708796381
+
+
+	SEE ALSO
+         yank(1), xsel(1), xset(1), xclipboard(1), xpaste(1)
+
+
+	AUTHOR
+         metaory <metaory@gmail.com>, Feb 2024
 ```
 
 Modes
@@ -59,3 +69,6 @@ ln -sfv xyank /usr/bin/xyank
 xyank --help
 ```
 
+TODO
+====
+- [ ] Makefile
