@@ -1,7 +1,7 @@
 XYANK
 =====
 
-```
+```bash
 NAME
 	xyank - build, execute or pass standard input and arguments to clipboard
 
