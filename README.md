@@ -10,6 +10,10 @@ SYNOPSIS
 	[CMD... |] xyank X|Y [STR...]
 
 
+DESCRIPTION
+	modes: `x|X` for execute, `y|Y` for yank only
+
+
 EXAMPLES
 	# yank arguments to clipboard
 	xyank Y date foo          # date foo
