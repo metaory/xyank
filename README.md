@@ -34,12 +34,39 @@ EXAMPLES
 	echo date | xyank X '+%s' # 1708796381
 
 
+ENVIRONMENT VARIABLES
+	XYANK_SILENT   Silent Query & Result prints
+
+
 SEE ALSO
 	yank(1), xsel(1), xset(1), xclipboard(1), xpaste(1)
 
 
 AUTHOR
 	metaory <metaory@gmail.com>, Feb 2024
+```
+
+CONFIGURATION
+-------------
+
+```bash
+# to silent outputs
+# export XYANK_SILENT=1
+
+# ALIASES
+
+alias -g YY='| xyank Y'
+wc -l README.md YY      # 99 README.md
+
+alias -g YX='| xyank X'
+echo wc -l YX README.md # 99 README.md
+
+alias yy='xyank Y'
+wc -l | yy              # 99 README.md
+yy wc -l README.md      # wc -l README.md
+
+alias yx='xyank X'
+yx wc -l README.md      # 99 README.md
 ```
 
 Modes

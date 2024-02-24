@@ -24,6 +24,7 @@ function print_len {
 	${C3}$(wc -w <<< "$v")${C8}word\
 	${C3}${#v}${C8}char${CR}
 	EOM
+  [ -z "$XYANK_SILENT" ] && printf '%s\n ---\n' "$v"
 }
 
 function set_output {
