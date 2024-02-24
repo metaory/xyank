@@ -30,12 +30,12 @@ EXAMPLES
 	echo date | xyank X '+%s' # 1708796381
 
 
-	SEE ALSO
-         yank(1), xsel(1), xset(1), xclipboard(1), xpaste(1)
+SEE ALSO
+	yank(1), xsel(1), xset(1), xclipboard(1), xpaste(1)
 
 
-	AUTHOR
-         metaory <metaory@gmail.com>, Feb 2024
+AUTHOR
+	metaory <metaory@gmail.com>, Feb 2024
 ```
 
 Modes
