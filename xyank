@@ -11,13 +11,7 @@ for i in {1..10}; do
   declare -g "CX${i}"="${CX}$(tput setaf "${i}")"
 done
 
-function CP { local c="CX${1}"; c="${!c}"; shift; printf "${c}%s${CR}" "${*:-●}"; }
 function fail { echo -e " ❗${CX1}ERROR ${C3}${*}"; exit 1; }
-
-declare MOD="${1:?$(fail MISSING_MOD)}"; shift
-declare -a STDIN; [ ! -t 0 ] && while read -r x; do STDIN+=( "${x}" ); done
-declare IN="${STDIN[*]}${STDIN[*]:+ }${*}"; IN="$(xargs <<< "${IN}")"
-declare -A KC=( [IN]=4 [OUT]=2 )
 
 function print_len {
   local k="${1:?NO_KEY}"
@@ -32,15 +26,20 @@ function print_len {
 	EOM
 }
 
-print_len IN
-
-[ -z "$IN" ] && fail NO_INPUT_DATA
-
 function set_output {
     OUT="${*:?EMPT}"
     print_len OUT
     xsel -i -b --trim <<< "${OUT}"
 }
+
+declare MOD="${1:?$(fail MISSING_MOD)}"; shift
+declare -a STDIN; [ ! -t 0 ] && while read -r x; do STDIN+=( "${x}" ); done
+declare IN="${STDIN[*]}${STDIN[*]:+ }${*}"; IN="$(xargs <<< "${IN}")"
+declare -A KC=( [IN]=4 [OUT]=2 )
+
+print_len IN
+
+[ -z "$IN" ] && fail NO_INPUT_DATA
 
 case "$MOD" in
   -h|--help) print_synopsis; print_usage; ;;
