@@ -7,7 +7,7 @@ function print_synopsis {
 function print_usage {
   cat << EOM
 NAME
-	xyank - build, execute or pass standard input and arguments to clipboard
+	xyank - format, build, execute, pass standard input and arguments to clipboard
 
 
 SYNOPSIS

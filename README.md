@@ -1,9 +1,9 @@
 XYANK
 =====
 
-```bash
+```ex
 NAME
-	xyank - build, execute or pass standard input and arguments to clipboard
+	xyank - format, build, execute, pass standard input and arguments to clipboard
 
 
 SYNOPSIS
@@ -49,7 +49,7 @@ AUTHOR
 CONFIGURATION
 -------------
 
-```bash
+```ex
 # to silent outputs
 # export XYANK_SILENT=1
 
@@ -81,7 +81,7 @@ Installation
 - give execution permissions
 - place it in your path
 
-```bash
+```ex
 # Clone the repo
 git clone git@github.com:metaory/xyank.git
 
@@ -103,3 +103,4 @@ xyank --help
 TODO
 ====
 - [ ] Makefile
+
